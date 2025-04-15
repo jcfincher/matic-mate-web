@@ -3,25 +3,29 @@
 
 <head>
     <title>Matic-Mate Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<img src="{{ url_for('static', filename='matic-mate-logo.png') }}" alt="Matic-Mate Logo" width="200">
-<h2 style="text-align: center; font-family: sans-serif; color: #333; margin-top: 10px;">
-    Let Matic-Mate drop voicemails while you close deals!
-</h2>
 
 <body>
-    <h1>Matic-Mate Web</h1>
-    <form method="POST">
-        {% for key, value in config.items() %}
-        <label>{{ key }}:</label><br>
-        <input type="text" name="{{ key }}" value="{{ value }}"><br><br>
-        {% endfor %}
-        <button type="submit">Save Configuration</button>
-    </form>
+    <div style="text-align: center; padding: 40px;">
+        <img src="{{ url_for('static', filename='matic-mate-logo.png') }}" alt="Matic-Mate Logo" width="200">
+        <h2>Let Matic-Mate drop voicemails while you close deals!</h2>
+    </div>
 
-    <form action="/call" method="POST" style="margin-top: 20px;">
-        <button type="submit">Make Call</button>
-    </form>
+    <div class="container">
+        <form method="POST">
+            {% for key, value in config.items() %}
+            <label>{{ key }}:</label><br>
+            <input type="text" name="{{ key }}" value="{{ value }}"><br>
+            {% endfor %}
+            <button type="submit">Save Configuration</button>
+        </form>
+
+        <form action="/call" method="POST" style="margin-top: 20px;">
+            <button type="submit">Make Call</button>
+        </form>
+    </div>
 </body>
+
 
 </html>
