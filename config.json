@@ -1,0 +1,6 @@
+{
+    "ACCOUNT_SID": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "AUTH_TOKEN": "your_auth_token_here",
+    "TWILIO_NUMBER": "+12345678900",
+    "TWIML_URL": "https://robocall-app.onrender.com/twiml.xml"
+}
